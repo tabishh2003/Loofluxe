@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Loop Luxe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0b0b0b;
+      --surface-color: #1a1a1a;
+      --text-primary: #fdfdfd;
+      --text-secondary: #9a9a9a;
+      --accent: #d4af37;
+      --nav-bg: rgba(11, 11, 11, 0.7);
+      --glass-border: rgba(255, 255, 255, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    h1,
+    h2,
+    h3,
+    .logo {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Nav */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 5%;
+      background: var(--nav-bg);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--glass-border);
+      z-index: 1000;
+      transition: padding 0.3s ease;
+    }
+
+    nav.scrolled {
+      padding: 15px 5%;
+      background: rgba(11, 11, 11, 0.9);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .logo:hover {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links li a {
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      color: var(--accent);
+    }
+
+    /* About Hero Section */
+    .about-hero {
+      position: relative;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=2000') center/cover;
+    }
+
+    .about-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(11, 11, 11, 0.6);
+    }
+
+    .about-hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    .page-title {
+      font-size: 4rem;
+      color: var(--text-primary);
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      min-width: 300px;
+      color: var(--accent);
+      font-style: italic;
+      letter-spacing: 1px;
+    }
+
+    /* Manifesto / Story Section */
+    .content-wrapper {
+      padding: 100px 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex: 1;
+    }
+
+    .grid-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      margin-bottom: 100px;
+    }
+
+    .grid-layout:nth-child(even) {
+      direction: rtl;
+    }
+
+    .grid-layout:nth-child(even)>* {
+      direction: ltr;
+      /* Reset direction for text */
+    }
+
+    .text-block h2 {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+    }
+
+    .text-block p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    .img-block {
+      width: 100%;
+      height: 500px;
+      background: var(--surface-color);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--glass-border);
+    }
+
+    .img-block img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .img-block:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Stats Section */
+    .stats-section {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      text-align: center;
+      gap: 40px;
+      padding: 60px 0;
+      border-top: 1px solid var(--glass-border);
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .stat-box h3 {
+      font-size: 3rem;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+
+    .stat-box p {
+      font-size: 0.9rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 500;
+    }
+
+    footer {
+      background: var(--surface-color);
+      padding: 40px 5%;
+      text-align: center;
+      border-top: 1px solid var(--glass-border);
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-top: auto;
+    }
+
+    @media (max-width: 900px) {
+      .grid-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .grid-layout:nth-child(even) {
+        direction: ltr;
+      }
+
+      .page-title {
+        font-size: 3rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav id="navbar">
+    <a href="First Store.html" class="logo">LOOP LUXE</a>
+    <ul class="nav-links">
+      <li><a href="First Store.html">Home</a></li>
+      <li><a href="First Store.html#shop">Collection</a></li>
+      <li><a href="#" style="color: var(--accent);">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="about-hero">
+    <div class="about-hero-content">
+      <h1 class="page-title">Our Story</h1>
+      <p class="hero-subtitle">Redefining modern luxury, one thread at a time.</p>
+    </div>
+  </section>
+
+  <div class="content-wrapper">
+    <div class="grid-layout">
+      <div class="text-block">
+        <h2>The Loop Luxe Vision</h2>
+        <p>Founded on the principle that everyday essentials shouldn't be ordinary, Loop Luxe was born from a desire to
+          blend uncompromising quality with minimalist aesthetics. We source only the finest sustainable materials to
+          create garments that feel as incredible as they look.</p>
+        <p>Our design philosophy strips away the unnecessary, focusing entirely on silhouette, texture, and durability.
+          We believe your wardrobe should work for you, offering effortless elegance for any setting.</p>
+      </div>
+      <div class="img-block">
+        <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&q=80&w=800"
+          alt="Craftsmanship">
+      </div>
+    </div>
+
+    <div class="stats-section">
+      <div class="stat-box">
+        <h3>100%</h3>
+        <p>Organic Materials</p>
+      </div>
+      <div class="stat-box">
+        <h3>50+</h3>
+        <p>Curated Designs</p>
+      </div>
+      <div class="stat-box">
+        <h3>0</h3>
+        <p>Carbon Impact</p>
+      </div>
+      <div class="stat-box">
+        <h3>24/7</h3>
+        <p>Client Support</p>
+      </div>
+    </div>
+
+    <div class="grid-layout" style="margin-top: 100px;">
+      <div class="text-block">
+        <h2>Uncompromising Quality</h2>
+        <p>We work directly with generational artisans and ethical factories. Every seam, cut, and finish is rigorously
+          tested to ensure our apparel stands the test of time. By eliminating the middleman, we deliver true luxury
+          craftsmanship directly to your door.</p>
+      </div>
+      <div class="img-block">
+        <img src="https://images.unsplash.com/photo-1558769132-cb1fac08c04b?auto=format&fit=crop&q=80&w=800"
+          alt="Quality Materials">
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Loop Luxe. All rights reserved.</p>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+
+</html>

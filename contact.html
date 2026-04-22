@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Loop Luxe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0b0b0b;
+      --surface-color: #1a1a1a;
+      --text-primary: #fdfdfd;
+      --text-secondary: #9a9a9a;
+      --accent: #d4af37;
+      --nav-bg: rgba(11, 11, 11, 0.7);
+      --glass-border: rgba(255, 255, 255, 0.1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    h1, h2, h3, .logo { font-family: 'Playfair Display', serif; }
+
+    /* Nav */
+    nav {
+      position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 5%;
+      background: var(--nav-bg); backdrop-filter: blur(12px); border-bottom: 1px solid var(--glass-border); z-index: 1000;
+      transition: padding 0.3s ease;
+    }
+    nav.scrolled { padding: 15px 5%; background: rgba(11, 11, 11, 0.9); }
+    .logo { font-size: 1.8rem; font-weight: 700; letter-spacing: 2px; color: var(--text-primary); text-decoration: none; transition: color 0.3s ease;}
+    .logo:hover { color: var(--accent); }
+    .nav-links { list-style: none; display: flex; gap: 30px; }
+    .nav-links li a { color: var(--text-primary); text-decoration: none; font-size: 0.95rem; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s ease;}
+    .nav-links li a:hover { color: var(--accent); }
+
+    /* Contact Section */
+    .contact-wrapper {
+      padding: 150px 5% 100px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 60px;
+      flex: 1;
+    }
+    .contact-info {
+      flex: 1;
+      min-width: 300px;
+    }
+    .page-title {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      color: var(--text-primary);
+      letter-spacing: 2px;
+    }
+    .description {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+      max-width: 500px;
+    }
+    .info-block {
+      margin-bottom: 30px;
+    }
+    .info-block h3 {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+      letter-spacing: 1px;
+      color: var(--text-primary);
+    }
+    .info-block p, .info-block a {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .info-block a:hover { color: var(--accent); }
+    
+    .contact-form {
+      flex: 1.5;
+      min-width: 350px;
+      background: var(--surface-color);
+      padding: 40px;
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    .form-group { margin-bottom: 25px; }
+    .form-control {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--glass-border);
+      color: var(--text-primary);
+      padding: 10px 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    .form-control:focus { border-color: var(--accent); }
+    textarea.form-control { resize: vertical; min-height: 100px; }
+    
+    .btn {
+      display: inline-block; padding: 15px 35px; background: transparent; color: var(--text-primary);
+      text-decoration: none; border: 1px solid var(--accent); font-size: 0.9rem; letter-spacing: 2px;
+      text-transform: uppercase; transition: all 0.4s ease; cursor: pointer; border-radius: 4px; width: 100%;
+    }
+    .btn:hover { background: var(--accent); color: #000; box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
+
+    footer { background: var(--surface-color); padding: 40px 5%; text-align: center; border-top: 1px solid var(--glass-border); color: var(--text-secondary); font-size: 0.9rem; margin-top: auto; }
+  </style>
+</head>
+<body>
+  <nav id="navbar">
+    <a href="First Store.html" class="logo">LOOP LUXE</a>
+    <ul class="nav-links">
+      <li><a href="First Store.html">Home</a></li>
+      <li><a href="First Store.html#shop">Collection</a></li>
+      <li><a href="First Store.html#about">About</a></li>
+      <li><a href="contact.html" style="color: var(--accent);">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="contact-wrapper">
+    <div class="contact-info">
+      <h1 class="page-title">Get in Touch.</h1>
+      <p class="description">We value your experience above all else. Whether you have a question about sizing, materials, or an existing order, the Loop Luxe team is here to help.</p>
+      
+      <div class="info-block">
+        <h3>Phone Support</h3>
+        <a href="tel:+18005553030">+1 (800) 555-3030</a>
+        <p style="font-size: 0.9rem; margin-top: 5px;">Monday - Friday: 9am - 6pm EST</p>
+      </div>
+      <div class="info-block">
+        <h3>Email</h3>
+        <a href="mailto:contact@loopluxe.com">contact@loopluxe.com</a>
+      </div>
+      <div class="info-block">
+        <h3>Our Flagship</h3>
+        <p>125 Avenue of the Americas<br>New York, NY 10013</p>
+      </div>
+    </div>
+
+    <form class="contact-form" onsubmit="event.preventDefault(); alert('Your message has been sent. Thank you!'); this.reset();">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Your Name" required>
+      </div>
+      <div class="form-group">
+        <input type="email" class="form-control" placeholder="Email Address" required>
+      </div>
+      <div class="form-group">
+        <textarea class="form-control" placeholder="How can we help?" required></textarea>
+      </div>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Loop Luxe. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Navigation blur on scroll
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
